@@ -1,62 +1,61 @@
 /*ページ全体*/
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap");
 
 body {
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    background: linear-gradient(135deg, #dbeafe, #eff6ff);
-    margin: 0;
-    padding: 20px;
-    color: #373a3e;
-    text-align: center;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  margin: 0;
+  padding: 20px;
+  color: #373a3e;
+  text-align: center;
 }
 
 /* 各画面のデザイン */
 .screen {
-    background-color: #ffffff;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 28px;
-    border: 1px solid #bfdbfe;
-    border-radius: 16px;
+  display: none;
+  background-color: #ffffff;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 28px;
+  border: 1px solid #bfdbfe;
+  border-radius: 16px;
 }
 
 /* ボタン */
 button {
-    background-color: #6495ed;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 999px;
+  background-color: #6495ed;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 999px;
 }
 
 /* 選択肢ボタン */
 .choice {
-    background-color: #cbddf2;
-    color: #373a3e;
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 14px 16px;
-    text-align: left;
-    border: 1px solid #9a9fb6;
-    border-radius: 6px;
+  background-color: #cbddf2;
+  color: #373a3e;
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 14px 16px;
+  text-align: left;
+  border: 1px solid #9a9fb6;
+  border-radius: 6px;
 }
 
 /* ボタンにマウスを乗せたとき */
-button:hover {
-    background-color: #5981cc;
-;
+.button:hover {
+  background-color: #5981cc;
 }
 
 .choice:hover {
-    background-color: #b8cadf;
+  background-color: #b8cadf;
 }
 
 /* 結果タイプ名 */
 .result-type {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
-
