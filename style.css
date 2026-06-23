@@ -3,7 +3,7 @@
 
 body {
   font-family: "M PLUS Rounded 1c", sans-serif;
-  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  background: linear-gradient(135deg, #98c9d9, #98c9d9);
   margin: 0;
   padding: 20px;
   color: #373a3e;
@@ -13,7 +13,7 @@ body {
 /* 各画面のデザイン */
 .screen {
   display: none;
-  background-color: #ffffff;
+  background-color: white;
   max-width: 500px;
   margin: 20px auto;
   padding: 28px;
@@ -23,9 +23,10 @@ body {
 
 /* ボタン */
 button {
-  background-color: #6495ed;
+  background-color: #143268;
   color: white;
   padding: 12px 24px;
+  margin: 40px;
   font-size: 16px;
   cursor: pointer;
   border: none;
@@ -34,28 +35,72 @@ button {
 
 /* 選択肢ボタン */
 .choice {
-  background-color: #cbddf2;
+  background-color: #989898;
   color: #373a3e;
   display: block;
   width: 100%;
   margin: 10px 0;
   padding: 14px 16px;
   text-align: left;
-  border: 1px solid #9a9fb6;
+  border: 1px solid #787777;
   border-radius: 6px;
 }
 
 /* ボタンにマウスを乗せたとき */
-.button:hover {
-  background-color: #5981cc;
+button:hover {
+  background-color: #0f2247;
 }
 
 .choice:hover {
-  background-color: #b8cadf;
+  background-color: #787777;
 }
 
 /* 結果タイプ名 */
 .result-type {
   font-size: 24px;
   font-weight: bold;
+}
+
+/*結果のカテゴリ*/
+
+h1.results {
+  margin-bottom: 70px;
+}
+
+h2.results {
+  font-size: 28px;
+  color: #61c1bd;
+  margin-bottom: 25px;
+  margin-top: 50px;
+}
+
+h3.results {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #61c1bd;
+  font-size: 18px;
+  color: #373a3e;
+}
+
+p {
+  line-height: 1.8;
+  margin: 15px 0;
+}
+
+strong {
+  color: #61c1bd;
+  font-size: 18px;
+}
+
+/* リスト */
+ul {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+li {
+  margin: 10px 0;
+  text-align: left;
+  line-height: 1.7;
 }

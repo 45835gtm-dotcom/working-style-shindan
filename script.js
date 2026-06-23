@@ -116,6 +116,47 @@ function nextQuestion(event) {
 }
 
 function result() {
+  //最高スコア
+  const maxScore = Math.max(...Object.values(scores));
+  //最高スコア→タイプ名
+  const yourTypes = Object.keys(scores).filter(
+    (type) => scores[type] === maxScore,
+  );
+  //タイプ名を表示
+  document.getElementById("result-types").textContent = yourTypes
+    .map((type) => RESULTS[type].name)
+    .join("、");
+
+  //診断結果
+  const contentHTML = yourTypes
+    .map((type) => {
+      const info = RESULTS[type];
+      return `
+      <h2 class="results">${info.name}について</h2>
+      <p><strong>${info.catchCopy}</strong></p>
+      <h3 class="results">説明</h3>
+      <p>${info.description}</p>
+      <h3 class="results">強み</h3>
+      <ul>
+        ${info.strengths.map((item) => `<li>${item}</li>`).join("")}
+      </ul>
+      <h3 class="results">向いている働き方</h3>
+      <ul>
+        ${info.workStyle.map((item) => `<li>${item}</li>`).join("")}
+      </ul>
+      <h3 class="results">相性のいいチーム・環境</h3>
+      <ul>
+        ${info.environment.map((item) => `<li>${item}</li>`).join("")}
+      </ul>
+      <h3 class="results">入社後に活躍できそうな場面</h3>
+      <p>${info.scene}</p>
+      <h3 class="results">一言アドバイス</h3>
+      <p>${info.advice}</p>
+    `;
+    })
+    .join("");
+
+  document.getElementById("result-content").innerHTML = contentHTML;
   showScreen("screen-result");
 }
 
