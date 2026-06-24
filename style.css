@@ -35,14 +35,14 @@ button {
 
 /* 選択肢ボタン */
 .choice {
-  background-color: #989898;
+  background-color: #c4c2c2;
   color: #373a3e;
   display: block;
   width: 100%;
   margin: 10px 0;
   padding: 14px 16px;
   text-align: left;
-  border: 1px solid #787777;
+  border: 1px solid #989898;
   border-radius: 6px;
 }
 
@@ -52,7 +52,7 @@ button:hover {
 }
 
 .choice:hover {
-  background-color: #787777;
+  background-color: #989898;
 }
 
 /* 結果タイプ名 */

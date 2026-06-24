@@ -123,9 +123,9 @@ function result() {
     (type) => scores[type] === maxScore,
   );
   //タイプ名を表示
-  document.getElementById("result-types").textContent = yourTypes
+  document.getElementById("result-types").innerHTML = yourTypes
     .map((type) => RESULTS[type].name)
-    .join("、");
+    .join("<br>");
 
   //診断結果
   const contentHTML = yourTypes
