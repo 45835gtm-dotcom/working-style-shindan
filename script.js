@@ -101,6 +101,12 @@ function nextQuestion(event) {
   const type = event.currentTarget.dataset.type;
   if (type) scores[type]++;
 
+  // タッチデバイス時のホバー状態をクリア
+  event.currentTarget.blur();
+  choiceButtons.forEach((button) => {
+    button.style.backgroundColor = "";
+  });
+
   count++;
 
   //次の画面へ
