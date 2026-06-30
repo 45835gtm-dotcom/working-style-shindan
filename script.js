@@ -21,6 +21,9 @@ const typeNames = {
 
 const choiceButtons = document.querySelectorAll(".choice");
 
+// 回答履歴
+let answerHistory = [];
+
 //－－－－－－－－－－－－－－－－－－関数－－－－－－－－－－－－－－－－
 //メイン関数
 function main() {
@@ -32,6 +35,10 @@ function main() {
   choiceButtons.forEach((button) => {
     button.addEventListener("click", nextQuestion);
   });
+  //戻る
+  document
+    .getElementById("button-back")
+    .addEventListener("click", previousQuestion);
   //再診断
   document.getElementById("button-restart").addEventListener("click", restart);
 }
@@ -60,6 +67,7 @@ function startQuiz() {
   //初期化
   count = 0;
   scores = { focus: 0, team: 0, idea: 0, improve: 0 };
+  answerHistory = [];
   //質問画面へ
   showQuestion();
 }
@@ -68,7 +76,7 @@ function startQuiz() {
 function showQuestion() {
   //countが7以上→質問の終了
   if (count >= questions.length) {
-    loading();
+    showScreen("screen-loading");
     setTimeout(result, 1000);
     return;
   }
@@ -93,13 +101,25 @@ function showQuestion() {
     //ボタンにタイプの属性を付ける
     button.dataset.type = choice.type;
   });
+
+  //戻るボタンの制御
+  const backButton = document.getElementById("button-back");
+  if (count === 0) {
+    backButton.style.display = "none";
+  } else {
+    backButton.style.display = "inline-block";
+  }
 }
 
 //次の質問へ
 function nextQuestion(event) {
   //タイプの記録
   const type = event.currentTarget.dataset.type;
-  if (type) scores[type]++;
+  if (type) {
+    scores[type]++;
+    //回答履歴に保存
+    answerHistory.push(type);
+  }
 
   count++;
 
@@ -113,6 +133,26 @@ function nextQuestion(event) {
     //1秒待って結果
     setTimeout(result, 1000);
   }
+}
+
+//前の質問へ
+function previousQuestion() {
+  //最初の質問には戻れない
+  if (count <= 0) {
+    return;
+  }
+
+  //前回の回答を取得
+  count--;
+  const previousAnswer = answerHistory.pop();
+
+  //スコアから前回の回答を引く
+  if (previousAnswer) {
+    scores[previousAnswer]--;
+  }
+
+  //前の質問を表示
+  showQuestion();
 }
 
 function result() {
