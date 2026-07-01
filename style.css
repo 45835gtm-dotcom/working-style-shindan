@@ -106,3 +106,28 @@ li {
   text-align: left;
   line-height: 1.7;
 }
+
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+
+  .screen {
+    display: none !important;
+  }
+
+  #screen-result {
+    display: block !important;
+    border: none;
+    box-shadow: none;
+    max-width: none;
+    margin: 0;
+    padding: 24px;
+  }
+
+  .result-actions,
+  #button-restart {
+    display: none !important;
+  }
+}

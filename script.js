@@ -39,8 +39,20 @@ function main() {
   document
     .getElementById("button-back")
     .addEventListener("click", previousQuestion);
+  //保存
+  document
+    .getElementById("button-save-pdf")
+    .addEventListener("click", saveAsPdf);
+  //リンクコピー
+  document
+    .getElementById("button-copy-link")
+    .addEventListener("click", copyShareLink);
   //再診断
   document.getElementById("button-restart").addEventListener("click", restart);
+  //PDF保存
+  document
+    .getElementById("button-save-pdf")
+    .addEventListener("click", saveAsPdf);
 }
 
 //画面をオン
@@ -147,9 +159,7 @@ function previousQuestion() {
   const previousAnswer = answerHistory.pop();
 
   //スコアから前回の回答を引く
-  if (previousAnswer) {
-    scores[previousAnswer]--;
-  }
+  scores[previousAnswer]--;
 
   //前の質問を表示
   showQuestion();
@@ -198,6 +208,10 @@ function result() {
 
   document.getElementById("result-content").innerHTML = contentHTML;
   showScreen("screen-result");
+}
+
+function saveAsPdf() {
+  window.print();
 }
 
 function restart() {
