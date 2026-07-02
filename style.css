@@ -107,9 +107,33 @@ li {
   line-height: 1.7;
 }
 
+.result-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  radient
+}
+
+#button-save-pdf {
+  background-color:#989898;
+}
+
+#button-copy-url {
+  background-color: #989898;
+}
+
+#button-share-X {
+  background-color: black;
+}
+
+#button-share-LINE {
+  background-color: #06c755;
+}
+
+
 @media print {
   body {
-    background: #fff;
+    background: white;
     padding: 0;
   }
 

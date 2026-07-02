@@ -24,6 +24,10 @@ const choiceButtons = document.querySelectorAll(".choice");
 // 回答履歴
 let answerHistory = [];
 
+//URL保存
+let currentShareText = "";
+const shareUrl = window.location.href;
+
 //－－－－－－－－－－－－－－－－－－関数－－－－－－－－－－－－－－－－
 //メイン関数
 function main() {
@@ -39,20 +43,13 @@ function main() {
   document
     .getElementById("button-back")
     .addEventListener("click", previousQuestion);
-  //保存
-  document
-    .getElementById("button-save-pdf")
-    .addEventListener("click", saveAsPdf);
-  //リンクコピー
-  document
-    .getElementById("button-copy-link")
-    .addEventListener("click", copyShareLink);
+  //PDF保存、シェア
+  const resultActionsArea = document.querySelector(".result-actions");
+  if (resultActionsArea) {
+    resultActionsArea.addEventListener("click", resultAction);
+  }
   //再診断
   document.getElementById("button-restart").addEventListener("click", restart);
-  //PDF保存
-  document
-    .getElementById("button-save-pdf")
-    .addEventListener("click", saveAsPdf);
 }
 
 //画面をオン
@@ -172,6 +169,10 @@ function result() {
   const yourTypes = Object.keys(scores).filter(
     (type) => scores[type] === maxScore,
   );
+  //シェア用テキスト
+  const typeNamesText = yourTypes.map((type) => RESULTS[type].name).join("・");
+  currentShareText = `私の診断結果は【${typeNamesText}】でした！`;
+
   //タイプ名を表示
   document.getElementById("result-types").innerHTML = yourTypes
     .map((type) => RESULTS[type].name)
@@ -210,8 +211,38 @@ function result() {
   showScreen("screen-result");
 }
 
-function saveAsPdf() {
-  window.print();
+function resultAction(event) {
+  //ボタン要素の取得
+  const targetId = event.target.closest("button")?.id || event.target.id;
+  if (!targetId) {
+    return;
+  }
+
+  //エンコード
+  const encodedText = encodeURIComponent(currentShareText);
+  const encodedUrl = encodeURIComponent(shareUrl);
+
+  //PDF保存
+  if (targetId === "button-save-pdf") {
+    window.print();
+  }
+  //URLコピー
+  else if (targetId === "button-copy-url") {
+    navigator.clipboard
+      .writeText(`${currentShareText} ${shareUrl}`)
+      .then(() => alert("リンクをコピーしました！"))
+      .catch(() => alert("コピーに失敗しました"));
+  }
+  //X
+  else if (targetId === "button-share-X") {
+    const xUrl = `https://x.com/intent/post?text=${encodedText}&url=${encodedUrl}`;
+    window.open(xUrl, "_blank");
+  }
+  //LINE
+  else if (targetId === "button-share-LINE") {
+    const lineUrl = `https://social-plugins.line.me/lineit/share?url=${encodedUrl}&text=${encodedText}`;
+    window.open(lineUrl, "_blank");
+  }
 }
 
 function restart() {
