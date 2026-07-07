@@ -235,7 +235,8 @@ function resultAction(event) {
   }
   // X
   else if (targetId === "button-share-X") {
-    const xUrl = `https://x.com/intent/post?text=${encodedText}%20${encodedUrl}`;
+    const xText = encodeURIComponent(`${currentShareText} ${shareUrl}`);
+    const xUrl = `https://x.com/intent/post?text=${xText}`;
     window.location.href = xUrl;
   }
 

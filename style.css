@@ -112,9 +112,16 @@ li {
 }
 
 .result-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.result-actions button {
+  width: 100%;
 }
 
 #button-save-pdf {
