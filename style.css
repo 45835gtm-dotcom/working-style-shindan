@@ -165,3 +165,16 @@ li {
     display: none !important;
   }
 }
+
+@media (max-width: 480px) {
+  .result-actions {
+    gap: 6px;
+    padding: 0 8px;
+  }
+
+  .result-actions button {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 !important;
+  }
+}
