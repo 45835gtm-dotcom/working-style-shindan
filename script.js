@@ -233,12 +233,13 @@ function resultAction(event) {
       .then(() => alert("リンクをコピーしました！"))
       .catch(() => alert("コピーに失敗しました"));
   }
-  //X
+  // X
   else if (targetId === "button-share-X") {
     const xUrl = `https://x.com/intent/post?text=${encodedText}%20${encodedUrl}`;
     window.open(xUrl, "_blank");
   }
-  //LINE
+
+  // LINE
   else if (targetId === "button-share-LINE") {
     const lineUrl = `https://line.me/R/share?text=${encodedText}%20${encodedUrl}`;
     window.open(lineUrl, "_blank");
