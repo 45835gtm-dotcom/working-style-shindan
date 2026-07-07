@@ -57,6 +57,10 @@ button {
   }
 }
 
+.choice:focus {
+  outline: none;
+}
+
 /* 結果タイプ名 */
 .result-type {
   font-size: 24px;
@@ -111,11 +115,10 @@ li {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  radient
 }
 
 #button-save-pdf {
-  background-color:#989898;
+  background-color: #989898;
 }
 
 #button-copy-url {
@@ -129,7 +132,6 @@ li {
 #button-share-LINE {
   background-color: #06c755;
 }
-
 
 @media print {
   body {
