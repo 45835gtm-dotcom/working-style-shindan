@@ -26,7 +26,7 @@ let answerHistory = [];
 
 //URL保存
 let currentShareText = "";
-const shareUrl = https:45835gtm-dotcom.github.io/working-style-shindan/;
+const shareUrl = https:"45835gtm-dotcom.github.io/working-style-shindan/";
 
 //－－－－－－－－－－－－－－－－－－関数－－－－－－－－－－－－－－－－
 //メイン関数
