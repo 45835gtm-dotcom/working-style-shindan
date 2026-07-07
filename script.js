@@ -235,12 +235,12 @@ function resultAction(event) {
   }
   //X
   else if (targetId === "button-share-X") {
-    const xUrl = `https://x.com/intent/post?text=${encodedText}&url=${encodedUrl}`;
+    const xUrl = `https://x.com/intent/post?text=${encodedText}%20${encodedUrl}`;
     window.open(xUrl, "_blank");
   }
   //LINE
   else if (targetId === "button-share-LINE") {
-    const lineUrl = `https://social-plugins.line.me/lineit/share?url=${encodedUrl}&text=${encodedText}`;
+    const lineUrl = `https://line.me/R/share?text=${encodedText}%20${encodedUrl}`;
     window.open(lineUrl, "_blank");
   }
 }
