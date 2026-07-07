@@ -236,7 +236,7 @@ function resultAction(event) {
   // X
   else if (targetId === "button-share-X") {
     const xUrl = `https://x.com/intent/post?text=${encodedText}%20${encodedUrl}`;
-    window.open(xUrl, "_blank");
+    window.location.href = xUrl;
   }
 
   // LINE
