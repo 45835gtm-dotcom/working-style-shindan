@@ -114,14 +114,14 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
 }
 
 .result-actions button {
   width: auto;
   max-width: 280px;
-  margin: 0 !important;
-  padding: 8px 14px;
+  margin: 8px 0 !important;
+  padding: 15px 15px;
 }
 
 #button-save-pdf {
@@ -163,19 +163,5 @@ li {
   .result-actions,
   #button-restart {
     display: none !important;
-  }
-}
-
-/* スマホ用 */
-@media (max-width: 480px) {
-  .result-actions {
-    gap: 6px;
-    padding: 0 8px;
-  }
-
-  .result-actions button {
-    width: 100%;
-    max-width: 320px;
-    margin: 0 !important;
   }
 }
