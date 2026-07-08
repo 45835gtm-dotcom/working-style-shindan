@@ -1,4 +1,4 @@
-/*ページ全体*/
+/* ページ全体 */
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap");
 
 body {
@@ -46,12 +46,11 @@ button {
   border-radius: 6px;
 }
 
-/* ボタンにマウスを乗せたとき（PCのみ） */
+/* ホバー（PCのみ） */
 @media (hover: hover) {
   button:hover {
     background-color: #0f2247;
   }
-
   .choice:hover {
     background-color: #989898;
   }
@@ -67,8 +66,7 @@ button {
   font-weight: bold;
 }
 
-/*結果のカテゴリ*/
-
+/* 結果のカテゴリ */
 h1.results {
   margin-bottom: 70px;
 }
@@ -111,6 +109,7 @@ li {
   line-height: 1.7;
 }
 
+/* 結果のシェアボタン */
 .result-actions {
   display: flex;
   flex-direction: column;
@@ -141,6 +140,7 @@ li {
   background-color: #06c755;
 }
 
+/* 印刷用 */
 @media print {
   body {
     background: white;
@@ -166,6 +166,7 @@ li {
   }
 }
 
+/* スマホ用 */
 @media (max-width: 480px) {
   .result-actions {
     gap: 6px;
