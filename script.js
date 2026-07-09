@@ -234,11 +234,11 @@ function resultAction(event) {
       .catch(() => alert("コピーに失敗しました"));
   }
   // X
-  else if (targetId === "button-share-X") {
+  /*else if (targetId === "button-share-X") {
     const xText = encodeURIComponent(`${currentShareText} ${shareUrl}`);
     const xUrl = `https://x.com/intent/post?text=${xText}`;
     window.location.href = xUrl;
-  }
+  }*/
 
   // LINE
   else if (targetId === "button-share-LINE") {
